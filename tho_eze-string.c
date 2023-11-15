@@ -74,3 +74,19 @@ for (; string[x] != '\0'; x++)
 ;
 return (x);
 }
+
+#include "main.h"
+/**
+ *_stringcopy - Copies a string to destination.
+ *@x: string to copy from.
+ *@y: destination buffer to copy to.
+ * Return: void
+ */
+void _stringcopy(char *x, char *y)
+{
+int i = 0;
+
+for (; x[i] != '\0'; i++)
+y[i] = x[i];
+y[i] = '\0';
+}
