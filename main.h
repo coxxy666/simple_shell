@@ -33,18 +33,11 @@
 extern char **environ;
 extern char *line;
 extern char **commands;
-/**
-* extern char *THO_EZE;
-*/
+extern char *THO_EZE;
+extern char *shell_name;
 extern int status;
 extern char **cm_ds;
-extern char *THO_EZE;
-/**
-*char **cm_ds = NULL;
-*char *line = NULL;
-*char *shell_name = NULL;
-*int status = 0;
-*/
+
 
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 

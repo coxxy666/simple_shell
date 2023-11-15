@@ -20,7 +20,7 @@ for (i = 0; internal_cm_d[i] != NULL; i++)
 if (_stringcmp(cm_d, internal_cm_d[i]) == 0)
 return (INTERNAL_COMMAND);
 }
-x = check_x(cm_d);
+x = check_cm_d(cm_d);
 if (x != NULL)
 {
 free(x);
@@ -39,7 +39,7 @@ return (INVALID_COMMAND);
  */
 void _execute_(char **tokenized_cm_d, int exe_type)
 {
-void (*function)(char **cm_d);
+
 
 if (exe_type == EXTERNAL_COMMAND)
 {
@@ -59,12 +59,12 @@ exit(2);
 }
 if (exe_type == INTERNAL_COMMAND)
 {
-func = _getfunction(tokenized_cm_d[0]);
-func(tokenized_cm_d);
+_getfunction(tokenized_cm_d[0]);
+
 }
 if (exe_type == INVALID_COMMAND)
 {
-_printf(THO_EZE, STDERR_FILENO);
+_printf(shell_name, STDERR_FILENO);
 _printf(": 1: ", STDERR_FILENO);
 _printf(tokenized_cm_d[0], STDERR_FILENO);
 _printf(": not found\n", STDERR_FILENO);
@@ -120,7 +120,7 @@ void (*_getfunction(char *cm_d))(char **)
 {
 int i;
 function_mapping mapping[] = {
-{"env", env}, {"exit", quit}};
+{"env", envir}, {"exit", _exitf}};
 
 for (i = 0; i < 2; i++)
 {

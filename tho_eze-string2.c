@@ -78,65 +78,6 @@ len++;
 return (len);
 }
 
-/**
-*_stringcat - Concatenates two strings and returns the new string.
-*@x: The string to which the second string is concatenated.
-*@y: The string that is concatenated to the x string.
-* Return: The address of the new string.
-*/
-char *_stringcat(char *x, char *y)
-{
-char *i =  NULL;
-int j = _stringlen(x);
-int k = _stringlen(y);
-
-i = malloc(sizeof(*i) * (j + k + 1));
-_stringcopy(x, i);
-_stringcopy(y, i + j);
-i[j + k] = '\0';
-return (i);
-}
-
-/**
-*_stringmatch - Calculates length of a prefix substring in x that j y.
-*@x: string to be searched.
-*@y: string to be used as the prefix.
-*Return: number of bytes in the initial segment of x that j y.
-*/
-int _stringmatch(char *x, char *y)
-{
-int i = 0;
-int j = 0;
-
-while (x[i] != '\0')
-{
-if (_stringloc(y, x[i]) == NULL)
-break;
-j++;
-i++;
-}
-return (j);
-}
-
-/**
-*_stringcomp - Calculates length of segment in x with chars not in y.
-*@x: string to be searched.
-*@y: string containing the characters to be excluded.
-*Return: index at which a character from x is found in y.
-*/
-int _stringcomp(char *x, char *y)
-{
-int len = 0;
-int  i;
-
-for (i = 0; x[i] != '\0'; i++)
-{
-if (_stringloc(y, x[i]) != NULL)
-break;
-len++;
-}
-return (len);
-}
 
 /**
 *_stringloc - Locates a character in a string.

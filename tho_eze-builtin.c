@@ -17,24 +17,24 @@ _printf("\n", STDOUT_FILENO);
 }
 
 /**
- * _exit - Exits the shell.
+ * _exitf - Exits the shell.
  * @cm_d: The command entered.
  * Description: No arg exits with
  * current status arg exits with specified status.
  * Return: void.
  */
-void _exit(char **cm_d)
+void _exitf(char **cm_d)
 {
 int cmd_number = 0;
 int arg;
 
-for (; cm_d[num_token] != NULL; num_token++)
+for (; cm_d[cmd_number] != NULL; cmd_number++)
 ;
 if (cmd_number == 1)
 {
 free(cm_d);
 free(line);
-free(commands);
+free(cm_ds);
 exit(status);
 }
 else if (cmd_number == 2)
@@ -52,7 +52,7 @@ else
 {
 free(line);
 free(cm_d);
-free(commands);
+free(cm_ds);
 exit(arg);
 }
 }
