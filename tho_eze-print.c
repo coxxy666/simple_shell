@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  *_printf - Prints a string to the specified output.
  *@string: String to be printed.

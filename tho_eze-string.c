@@ -28,6 +28,8 @@ return (x);
 }
 
 
+
+
 /**
  *rem_newline - Removes newline characters from a string.
  *@string: string to be modified.
