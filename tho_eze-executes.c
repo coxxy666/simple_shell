@@ -5,7 +5,7 @@
  * @typecm_d: type of the command.
  * Description: This function runs forks for external
  * Return: void.
- */
+ **/
 void _execute(char **cm_d, int typecm_d)
 {
 pid_t PID;

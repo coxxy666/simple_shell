@@ -2,8 +2,10 @@
 
 char **cm_ds = NULL;
 char *line = NULL;
-char *shell_name = NULL;
 int status = 0;
+char *shell_name = NULL;
+
+
 /**
 * main - The main function of the shell program.
 * @argc: The number of arguments passed to the program.
@@ -16,6 +18,8 @@ char **current_cm_d = NULL;
 int i;
 int type_cm_d = 0;
 size_t n = 0;
+
+
 
 signal(SIGINT, ctrl_c_controller);
 shell_name = argv[0];
